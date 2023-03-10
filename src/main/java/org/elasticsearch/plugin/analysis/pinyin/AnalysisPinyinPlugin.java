@@ -26,6 +26,7 @@ public class AnalysisPinyinPlugin extends Plugin implements AnalysisPlugin {
     public Map<String, AnalysisModule.AnalysisProvider<org.elasticsearch.index.analysis.TokenFilterFactory>> getTokenFilters() {
         Map<String, AnalysisModule.AnalysisProvider<org.elasticsearch.index.analysis.TokenFilterFactory>> extra = new HashMap<>();
         extra.put("pinyin", PinyinTokenFilterFactory::new);
+        extra.put("dg_pinyin", DgPinyinTokenFilterFactory::new);
         return extra;
     }
 
